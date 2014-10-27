@@ -3,12 +3,16 @@
 <head>
   <title>Openhouse</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-
+<h1>Home Sweet Home La La</h1>
 <%= yield %>
 
+<!-- any erb page I render will be in yield -->
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

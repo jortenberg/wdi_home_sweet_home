@@ -1,0 +1,29 @@
+<h3>Welcome to Open House. Please login.</h3>
+
+<% if @error %>
+	<p style='color: red;'>Incorrect email/password</p>
+<% end %>
+
+<form action="/session" method="POST">
+	<label>
+		Email:
+		<input name="email">
+	</label>
+	<label>
+		Password:
+		<input name="password" type="password">
+	</label>
+
+	<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+
+	<button>Sign In</button>
+</form>
+
+<h3>If you are not a member sign up</h3>
+<form action="/users/new" method="GET">
+
+	<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+
+	<button>Sign Up</button>
+</form>
+
