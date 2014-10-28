@@ -1,7 +1,7 @@
 
 window.onload = function(){
 	$.ajax({
-		url: "http://127.0.0.1:3000/houses",
+		url: "http://localhost:3000/houses",
 		type: "GET"
 	}).done(function(data){
 		console.log(data);
@@ -28,7 +28,7 @@ function addHouseToDom(house) {
 
 	var listItem = document.createElement("li");
 	listItem.innerText = house["st_address"] + house["city"] + house["sch_date"] + house["sch_time"];
-	unorderedList.appendChild(ListItem);
+	unorderedList.appendChild(listItem);
 }
 
 	//create a person hash from the bootstrap modal input boxes
@@ -58,7 +58,7 @@ function makeNewHouseFromPanel() {
 	var newUserId = userId.value;
 
 	$.ajax({
-		url: "http://127.0.0.1:3000/houses",
+		url: "http://localhost:3000/houses",
 		type: "POST",
 		data: {	"sch_date": newSchDate,
 		"sch_time": newSchTime,
