@@ -5,6 +5,8 @@ class HousesController < ApplicationController
 
 		if @user
 			render :index
+			# this is where my route goes to after session cookies are assigned this is where we go to rendering of openhouses by users
+
 		else
 			redirect_to '/login'
 		end
@@ -14,17 +16,18 @@ class HousesController < ApplicationController
 
 	#HTTParty.get('http://localhost:3000/houses.json')
 	def index
-		houses = House.all
 
-		respond_to do |format|
-			format.json { render :json => houses }
-		end
+		user = User.find_by(id: session[:user_id])
+		houses = user.houses
+
+		render :json => houses
+
 	end
 
 	#Good input
-	#HTTParty.post('http://localhost:3000/house.json', :body => {sch_date: 11/2/2014, sch_time: 1:00pm, st_address: "14 Pine Street", city: "Oceanside", state: "NY", zip: 11340, user_id: 4})
+	# HTTParty.post('http://localhost:3000/houses.json', :body => {sch_date: "11/2/2014", sch_time: "1:00pm", st_address: "14 Pine Street", city: "Oceanside", state: "NY", zip: 11340, user_id: 5})
 	#Bad input
-	#HTTParty.post('http://localhost:3000/house.json', :body => {sch_date: 11/2/2014})  
+	#HTTParty.post('http://localhost:3000/houses.json', :body => {sch_date: 11/2/2014})  
 	def create
 		house = House.new(sch_date: params["sch_date"], sch_time: params["sch_time"], st_address: params["st_address"], city: params["city"], state: params["state"], zip: params["zip"], user_id: params["user_id"])
 
@@ -62,6 +65,7 @@ class HousesController < ApplicationController
 			end
 		end
 	end
+
 
 	def destroy
 		house = House.find(params[:id])
