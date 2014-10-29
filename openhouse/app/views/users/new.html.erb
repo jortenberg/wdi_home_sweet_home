@@ -1,27 +1,31 @@
-<h3>Sign up to be a member of Open House</h3>
+<div class="container">
 
-<form action="/users" method="POST">
-  <label>
-    first name:
-    <input name="fname" />
-  </label>
+  <h3>Sign up to be a member of Open House</h3>
 
-  <label>
-    last name:
-    <input name="lname" />
-  </label>
+  <form action="/users" method="POST">
+    <label>
+      first name:
+      <input name="fname" />
+    </label>
 
-  <label>
-    email:
-    <input name="email" />
-  </label>
+    <label>
+      last name:
+      <input name="lname" />
+    </label>
 
-  <label>
-    password:
-    <input name="password" />
-  </label>
+    <label>
+      email:
+      <input name="email" />
+    </label>
 
-  <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+    <label>
+      password:
+      <input name="password" />
+    </label>
 
-  <button>Submit</button>
-</form>
+    <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+
+    <button>Submit</button>
+  </form>
+
+</div>

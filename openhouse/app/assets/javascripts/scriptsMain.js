@@ -28,9 +28,11 @@ window.onload = function(){
 	var clientSubmit = document.getElementById("client_submit");
 	if(clientSubmit != undefined){
 		console.log("on clients page")
+		id = $('input[name=house_id]').val()
 
 		$.ajax({
 			url: "/clients",
+			data :{house_id: id},
 			type: "GET"
 		}).done(function(data){
 			console.log(data);
@@ -44,10 +46,13 @@ window.onload = function(){
 
 			// var clientSubmit = document.getElementById("client_submit");
 
-			clientSubmit.addEventListener("click", function(){
+
+			})
+
+			clientSubmit.addEventListener("click", function(event){
 				makeNewClientFromPanel();
 			});
-		})
+		// })
 
 	};
 }
@@ -60,13 +65,8 @@ function addClientToDom(client) {
 	var listItem = document.createElement("li");
 	listItem.innerHTML = "<a href='http://www.w3schools.com'>" + client["fname"] + " " + client["lname"] + "</a>";
 	unorderedList.appendChild(listItem);
-}
 
-	//create a person hash from the bootstrap modal input boxes
-	//send that person hash to the addPerson
-function makeNewClientFromPanel() {
-	// var mainSubmit = document.getElementById("main_submit");
-	// debugger
+
 	var firstName = document.getElementById("first_name");
 	var newFirstName = firstName.value;
 	firstName.value = "";
@@ -108,7 +108,7 @@ function makeNewClientFromPanel() {
 	houseId.value = "";
 
 	$.ajax({
-		url: "http://localhost:3000/clients",
+		url: "/clients",
 		type: "POST",
 		data: {	"fname": newFirstName,
 		"lname": newLastName,

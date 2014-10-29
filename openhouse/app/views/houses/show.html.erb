@@ -6,11 +6,11 @@
 
 <!-- showing all stuff for 1 house which includes clients. -->
 
-	<p>house id <%= @house.id %></p>
+<!-- <p><%= @house.id %></p> -->
 
     <header class="row">
-      <div class="col-md-6">
-        <h3>Welcome To The <%= @house.st_address %> Open House.</h3>
+      <div class="col-md-12">
+        <h3>Welcome To The <%= @house.st_address %> Open House</h3>
       </div>
     </header>
 
@@ -68,7 +68,7 @@
 	          </div>
 	          <div class="form-group">
 	            <label for="house_id"></label>
-	            <input type="hidden" class="form-control" id="house_id" value=<%= @house.id %> placeholder="">
+	            <input type="hidden" class="form-control" id="house_id" name="house_id" value=<%= @house.id %> placeholder="">
 	          </div>
 	      <!--   </form>   -->
 	        <button type="submit" class="btn btn-primary" id="client_submit">Submit</button>

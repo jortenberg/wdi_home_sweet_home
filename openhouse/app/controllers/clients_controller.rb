@@ -2,8 +2,10 @@ class ClientsController < ApplicationController
 
 	#HTTParty.get('http://localhost:3000/houses.json')
 	def index
-		# @house = House.find_by(id: session[:user_id])
+		# find clients that have a particular house_id
+		
 		house = House.find(params["house_id"])
+
 		clients = house.clients
 
 		respond_to do |format|
@@ -16,7 +18,8 @@ class ClientsController < ApplicationController
 	#Bad input
 	#HTTParty.post('http://localhost:3000/houses.json', :body => {sch_date: 11/2/2014})  
 	def create
-		client = Client.new(fname: params["fname"], lname: params["lname"], email: params["email"], phone: params["phone"], st_address: params["st_address"], state: params["state"], zip: params["zip"], are_you: params["are_you"], house_id: params["house_id"])
+		# binding.pry
+		client = Client.new(fname: params["fname"], lname: params["lname"], email: params["email"], phone: params["phone"], st_address: params["st_address"], city: params["city"], state: params["state"], zip: params["zip"], are_you: params["are_you"], house_id: params["house_id"])
 
 		respond_to do |format|
 			format.json do
@@ -57,7 +60,7 @@ class ClientsController < ApplicationController
 		house = House.find(params[:id])
 		house.destroy
 
-		render :json => house
+		# render :json => house
 	end
   
 end
