@@ -2,7 +2,8 @@ class ClientsController < ApplicationController
 
 	#HTTParty.get('http://localhost:3000/houses.json')
 	def index
-		clients = Client.all
+		house = House.find(params["house_id"])
+		clients = house.clients
 
 		respond_to do |format|
 			format.json { render :json => clients }
@@ -10,7 +11,7 @@ class ClientsController < ApplicationController
 	end
 
 	#Good input
-	# HTTParty.post('http://localhost:3000/houses.json', :body => {sch_date: "11/2/2014", sch_time: "1:00pm", st_address: "14 Pine Street", city: "Oceanside", state: "NY", zip: 11340, user_id: 5})
+# HTTParty.post('http://localhost:3000/clients.json', :body => {fname: "Frank", lname: "Giampolo", email: "14 Pine Street", phone: "512-546-3456", st_address: "14 Pinster Street", state: "NY", zip: 11340, are_you: true, house_id: 5})
 	#Bad input
 	#HTTParty.post('http://localhost:3000/houses.json', :body => {sch_date: 11/2/2014})  
 	def create
@@ -18,11 +19,11 @@ class ClientsController < ApplicationController
 
 		respond_to do |format|
 			format.json do
-				if house.valid? 
-					house.save
-					render :json => house
+				if client.valid? 
+					client.save
+					render :json => client
 				else
-					render :json => house.errors.messages.to_json
+					render :json => client.errors.messages.to_json
 				end
 			end
 		end

@@ -43,6 +43,11 @@ class HousesController < ApplicationController
 		end
 	end
 
+	def show
+		@house = House.find_by(id: params[:id])
+		render :show
+	end
+
  
 	def update
 		house = House.find(params[:id])

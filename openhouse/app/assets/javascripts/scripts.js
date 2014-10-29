@@ -27,7 +27,7 @@ function addHouseToDom(house) {
 	var unorderedList = document.getElementById("moreHouses");
 
 	var listItem = document.createElement("li");
-	listItem.innerText = house["st_address"] + house["city"] + house["sch_date"] + house["sch_time"];
+	listItem.innerHTML = "<a href='./" + house["id"] + "'>" + house["st_address"] + ", " + "</a>" + house["city"] + " " + house["state"] + ". On " + house["sch_date"] + " at " + house["sch_time"];
 	unorderedList.appendChild(listItem);
 }
 
@@ -38,24 +38,31 @@ function makeNewHouseFromPanel() {
 
 	var scheduleDate = document.getElementById("schedule_date");
 	var newSchDate = scheduleDate.value;
+	scheduleDate.value = "";
 
 	var scheduleTime = document.getElementById("schedule_time");
 	var newSchTime = scheduleTime.value;
+	scheduleTime.value = "";
 
 	var streetAddress = document.getElementById("street_address");
 	var newStAddress = streetAddress.value;
+	streetAddress.value = "";
 
 	var city = document.getElementById("city");
 	var newCity = city.value;
+	city.value = "";
 
 	var state = document.getElementById("state");
 	var newState = state.value;
+	state.value = "";
 
 	var zip = document.getElementById("zip");
 	var newZip = zip.value;
+	zip.value = "";
 
 	var userId = document.getElementById("user_id");
 	var newUserId = userId.value;
+	userId.value = "";
 
 	$.ajax({
 		url: "http://localhost:3000/houses",
