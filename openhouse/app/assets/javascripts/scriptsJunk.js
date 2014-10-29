@@ -1,11 +1,24 @@
-window.onload = function(){
+// window.onload = function(){
+// 	$.ajax({
+// 		url: "/clients",
+// 		type: "GET"
+// 	}).done(function(data){
+// 		console.log(data);
+		
+// 		// people = JSON.parse(data);
 
-		var clientSubmit = document.getElementById("client_submit");
+// 		var clients = data;
+// 		for (var i = 0; i < clients.length; i++) {
+// 			addClientToDom(clients[i]);
+// 		}
 
-		clientSubmit.addEventListener("click", function(){
-			makeNewClientFromPanel();
-		});
-	}
+// 		var clientSubmit = document.getElementById("client_submit");
+
+// 		clientSubmit.addEventListener("click", function(){
+// 			makeNewClientFromPanel();
+// 		});
+// 	})
+// }
 
 function addClientToDom(client) {
 //people[i] doesn't exist within this function
@@ -21,7 +34,7 @@ function addClientToDom(client) {
 	//send that person hash to the addPerson
 function makeNewClientFromPanel() {
 	// var mainSubmit = document.getElementById("main_submit");
-
+	// debugger
 	var firstName = document.getElementById("first_name");
 	var newFirstName = firstName.value;
 	firstName.value = "";

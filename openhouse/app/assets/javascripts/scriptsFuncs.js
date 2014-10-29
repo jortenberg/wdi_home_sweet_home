@@ -1,26 +1,4 @@
 
-window.onload = function(){
-	$.ajax({
-		url: "http://localhost:3000/houses",
-		type: "GET"
-	}).done(function(data){
-		console.log(data);
-		
-		// people = JSON.parse(data);
-
-		var houses = data;
-		for (var i = 0; i < houses.length; i++) {
-			addHouseToDom(houses[i]);
-		}
-
-		var mainSubmit = document.getElementById("main_submit");
-
-		mainSubmit.addEventListener("click", function(){
-			makeNewHouseFromPanel();
-		});
-	})
-}
-
 function addHouseToDom(house) {
 //people[i] doesn't exist within this function
 //you have to replace it with a parameter that is passed in
