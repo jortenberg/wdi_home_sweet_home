@@ -76,7 +76,7 @@ function makeNewClientFromPanel() {
 	houseId.value = "";
 
 	$.ajax({
-		url: "http://localhost:3000/clients",
+		url: "/clients",
 		type: "POST",
 		data: {	"fname": newFirstName,
 		"lname": newLastName,

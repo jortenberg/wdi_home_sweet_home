@@ -43,7 +43,7 @@ function makeNewHouseFromPanel() {
 	userId.value = "";
 
 	$.ajax({
-		url: "http://localhost:3000/houses",
+		url: "/houses",
 		type: "POST",
 		data: {	"sch_date": newSchDate,
 		"sch_time": newSchTime,
