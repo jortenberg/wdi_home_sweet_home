@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   post '/session' => 'session#create'
   delete '/session' => 'session#destroy'
 
-  # get '/main' => 'main#index'
-
   get 'users/new' => 'users#new'
   get 'users' => 'users#index'
   post 'users' => 'users#create'
