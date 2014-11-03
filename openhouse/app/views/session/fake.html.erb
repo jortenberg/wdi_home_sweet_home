@@ -1,0 +1,105 @@
+
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form role="form" action="/session" method="POST">
+
+        <h3>LOGIN</h3>
+
+
+        <div class="form-group">
+          <label for="emailAddress">Email address</label>
+          <input name="email" type="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input name="password" type="password" class="form-control">
+        </div>
+        <input name="authenticity_token" value="TlI4bxaOArUhh/Pr7REjy6Db+gXJOBU01ipRHqISsbA=" type="hidden">
+        <button>Sign In</button>
+      </form>
+      
+      <div class="form-group">
+        <h6>Not a member?<a href="/users/new"> Sign up!</a></h6>
+        <input name="authenticity_token" value="TlI4bxaOArUhh/Pr7REjy6Db+gXJOBU01ipRHqISsbA=" type="hidden">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+---------
+<div class="container">
+  <form role="form" action="/session" method="POST">
+
+    <h3>LOGIN</h3>
+
+    <% if @error %>
+      <p style='color: red;'>Incorrect email/password</p>
+    <% end %>
+
+    <div class="form-group">
+      <label for="emailAddress">Email address</label>
+      <input name="email" type="email" class="form-control" placeholder="Email Address">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input name="password" type="password" class="form-control">
+    </div>
+    <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+
+    <button>Sign In</button>
+  </form>
+
+
+
+
+
+
+  <h6>Not a member? sign up</h6>
+  <form role="form" action="/users/new" method="GET">
+    <div class="form-group">
+      <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+      <button>Sign Up</button>
+    </div>
+  </form>
+
+
+</div>
+
+--------
+
+<div class="container">
+
+  <h3>LOGIN</h3>
+
+  <% if @error %>
+    <p style='color: red;'>Incorrect email/password</p>
+  <% end %>
+
+  <form action="/session" method="POST">
+    <label>
+      Email:
+      <input name="email">
+    </label>
+    <label>
+      Password:
+      <input name="password" type="password">
+    </label>
+
+    <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+
+    <button>Sign In</button>
+  </form>
+
+  <h3>If you are not a member sign up</h3>
+  <form action="/users/new" method="GET">
+
+    <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+
+    <button>Sign Up</button>
+  </form>
+
+</div>
