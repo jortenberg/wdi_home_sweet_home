@@ -40,8 +40,8 @@ class HousesController < ApplicationController
 	end
 
 	def show
-		house = House.find(params[:id])
-		# house = House.find_by(id: params[:id])
+		# house = House.find(params[:id])
+		house = House.find_by(id: params[:id])
 		render(:show, { locals: { house: house } })
 	end
 

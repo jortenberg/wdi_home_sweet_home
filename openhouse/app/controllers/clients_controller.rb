@@ -18,17 +18,15 @@ class ClientsController < ApplicationController
 		end
 	end
 
-	#Good input
-# HTTParty.post('http://localhost:3000/clients.json', :body => {fname: "Frank", lname: "Giampolo", email: "14 Pine Street", phone: "512-546-3456", st_address: "14 Pinster Street", state: "NY", zip: 11340, are_you: true, house_id: 5})
+
  
 	def create
 
-		# binding.pry
-		client = Client.new(fname: params["fname"], lname: params["lname"], email: params["email"], phone: params["phone"], st_address: params["st_address"], city: params["city"], state: params["state"], zip: params["zip"], are_you: false, house_id: params["house_id"])
+		client = Client.new(fname: params["fname"], lname: params["lname"], email: params["email"], phone: params["phone"], st_address: params["st_address"], city: params["city"], state: params["state"], zip: params["zip"], are_you: params["are_you"], house_id: params["house_id"])
 
 		if client.valid? 
 			client.save
-			redirect_to '/houses'
+			redirect_to '/houses/' + params["house_id"]
 		else
 			render :json => client.errors.messages
 		end
