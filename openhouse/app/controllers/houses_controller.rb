@@ -4,8 +4,7 @@ class HousesController < ApplicationController
 		@user = User.find_by(id: session[:user_id])
 
 		if @user
-			render(:index)
-			# this is where my route goes to after session cookies are assigned this is where we go to rendering of openhouses by users
+			render(:new)
 
 		else
 			redirect_to '/login'
@@ -14,11 +13,11 @@ class HousesController < ApplicationController
 	end
 		
 	def index
+		# this is where my route goes to after session cookies are assign
 		user = User.find_by(id: session[:user_id])
 		houses = user.houses
 
 		render(:index, { locals: { user: user, houses: houses } })
-		# render :json => houses
 	end
 
 	#Good input
@@ -27,20 +26,16 @@ class HousesController < ApplicationController
 	def create
 		house = House.new(sch_date: params["sch_date"], sch_time: params["sch_time"], st_address: params["st_address"], city: params["city"], state: params["state"], zip: params["zip"], user_id: params["user_id"])
 
-		respond_to do |format|
-			format.json do
-				if house.valid? 
-					house.save
-					render :json => house
-				else
-					render :json => house.errors.messages.to_json
-				end
-			end
+		if house.valid? 
+			house.save
+			redirect_to '/houses'
+		else
+			render :json => house.errors.messages
 		end
 	end
 
+
 	def show
-		# house = House.find(params[:id])
 		house = House.find_by(id: params[:id])
 		render(:show, { locals: { house: house } })
 	end
@@ -56,15 +51,11 @@ class HousesController < ApplicationController
 		house.zip = params["zip"]
 		house.user_id = params["user_id"]
 
-		respond_to do |format|
-			format.json do
-				if house.valid?
-					house.save
-					render :json => house
-				else
-					render :json => house.errors.messages.to_json
-				end
-			end
+		if house.valid?
+			house.save
+			redirect_to '/houses'
+		else
+			render :json => house.errors.messages
 		end
 	end
 
@@ -73,7 +64,7 @@ class HousesController < ApplicationController
 		house = House.find(params[:id])
 		house.destroy
 
-		render :json => house
+		redirect_to '/houses'
 	end
   
 end
