@@ -1,5 +1,10 @@
 class ClientsController < ApplicationController
 
+	def new
+		redirect_to '/houses'
+	end
+
+
 	#HTTParty.get('http://localhost:3000/houses.json')
 	def index
 		# find clients that have a particular house_id
@@ -15,23 +20,21 @@ class ClientsController < ApplicationController
 
 	#Good input
 # HTTParty.post('http://localhost:3000/clients.json', :body => {fname: "Frank", lname: "Giampolo", email: "14 Pine Street", phone: "512-546-3456", st_address: "14 Pinster Street", state: "NY", zip: 11340, are_you: true, house_id: 5})
-	#Bad input
-	#HTTParty.post('http://localhost:3000/houses.json', :body => {sch_date: 11/2/2014})  
+ 
 	def create
-		# binding.pry
-		client = Client.new(fname: params["fname"], lname: params["lname"], email: params["email"], phone: params["phone"], st_address: params["st_address"], city: params["city"], state: params["state"], zip: params["zip"], are_you: params["are_you"], house_id: params["house_id"])
 
-		respond_to do |format|
-			format.json do
-				if client.valid? 
-					client.save
-					render :json => client
-				else
-					render :json => client.errors.messages.to_json
-				end
-			end
+		# binding.pry
+		client = Client.new(fname: params["fname"], lname: params["lname"], email: params["email"], phone: params["phone"], st_address: params["st_address"], city: params["city"], state: params["state"], zip: params["zip"], are_you: false, house_id: params["house_id"])
+
+		if client.valid? 
+			client.save
+			redirect_to '/houses'
+		else
+			render :json => client.errors.messages
 		end
+
 	end
+
 
  
 	def update
