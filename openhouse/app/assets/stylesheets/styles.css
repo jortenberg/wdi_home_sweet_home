@@ -7,10 +7,12 @@ body {
 
 #login_panel {
   text-align: center;
+  margin-top: 20px;
 }
 
 #signup_panel {
   text-align: center;
+  margin-top: 20px;
 }
 
 #newClient_panel {
