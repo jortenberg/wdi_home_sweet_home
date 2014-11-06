@@ -2,8 +2,19 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: rgba(131,218,236,0.2);
+  /*background-color: rgba(131,218,236,0.2);*/
+  /*background:#c33;*/
+  background:#ffffff;
 }  
+
+a {
+  font-weight: bold;
+ 	color: #0064D6
+ }
+
+label {
+	color: black;
+}
 
 #login_panel {
   text-align: center;
@@ -17,13 +28,57 @@ body {
 
 #newClient_panel {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 40px;
 }
 
-a {
-  font-weight: bold;
- 	color: #0064D6
- }
+#newClient_panel h2 {
+	padding-top: 0px;
+	color: black;
+}
+
+#newClient_panel h4 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: red;
+}
+
+input {
+	border: none !important;
+	background: rgba(222, 228, 239, 0.9)!important;
+}
+
+.panel-transparent {
+	/*border-radius: 20px;*/
+	/*border: none !important;*/
+	border-radius: 10px;
+  background: none;
+}
+
+/*.panel-transparent .panel-heading{
+  background: rgba(211, 215, 219, 0.5)!important;
+}*/
+
+.panel-transparent .panel-body{
+	border-radius: 10px;
+/*  background: rgba(46, 51, 56, 0.8)!important;*/
+	background: rgba(224, 226, 231, 0.9)!important;
+}
+
+.navbar-inner {
+  background-size:cover;
+}
+
+.cover{
+  color: rgb(255, 255, 255);
+  position: relative;
+  background: url("/assets/img_0696.jpg") no-repeat scroll 0px 100% / cover transparent;
+}
+
+/*nav ul li {
+  list-style:none;
+  float:left;
+  margin-right:50px;
+}*/
 
 
 
