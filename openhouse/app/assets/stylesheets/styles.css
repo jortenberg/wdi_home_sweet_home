@@ -2,9 +2,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  /*background-color: rgba(131,218,236,0.2);*/
-  /*background:#c33;*/
-  background:#ffffff;
+  background: #fff;
 }  
 
 a {
@@ -28,7 +26,8 @@ label {
 
 #newClient_panel {
 	text-align: center;
-	margin-top: 40px;
+	margin-top: 80px;
+	margin-bottom: 250px;
 }
 
 #newClient_panel h2 {
@@ -44,7 +43,7 @@ label {
 
 input {
 	border: none !important;
-	background: rgba(222, 228, 239, 0.9)!important;
+	background: rgba(253, 253, 253, 0.8)!important;
 }
 
 .panel-transparent {
@@ -61,23 +60,32 @@ input {
 .panel-transparent .panel-body{
 	border-radius: 10px;
 /*  background: rgba(46, 51, 56, 0.8)!important;*/
-	background: rgba(224, 226, 231, 0.9)!important;
-}
-
-.navbar-inner {
-  background-size:cover;
+	background: rgba(225, 236, 249, 0.9)!important;
 }
 
 .cover{
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: rgb(255, 255, 255);
+  background: url("/assets/img_0696.jpg") no-repeat scroll 0px 100% / cover transparent;
+}
+
+/*.cover{
   color: rgb(255, 255, 255);
   position: relative;
   background: url("/assets/img_0696.jpg") no-repeat scroll 0px 100% / cover transparent;
-}
+}*/
 
 /*nav ul li {
   list-style:none;
   float:left;
   margin-right:50px;
+}*/
+
+/*.navbar-inner {
+  background-size:cover;
 }*/
 
 
