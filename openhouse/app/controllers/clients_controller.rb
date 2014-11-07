@@ -7,15 +7,11 @@ class ClientsController < ApplicationController
 
 	#HTTParty.get('http://localhost:3000/houses.json')
 	def index
-		# find clients that have a particular house_id
+		user = User.find_by(id: session[:user_id])
+		the_houses = user.houses
+		the_clients = user.clients
 		
-		house = House.find(params["house_id"])
-
-		clients = house.clients
-
-		respond_to do |format|
-			format.json { render :json => clients }
-		end
+		render(:index, { locals: { the_houses: the_houses, the_clients: the_clients } })
 	end
 
 

@@ -1,0 +1,6 @@
+    <ul>
+      <% the_clients.each do |client| %>
+        <li><a href="/clients/<%= client.id %>"><%= client.fname %> <%= client.lname %>, <% visited = House.find(client.house_id) %><%= visited["st_address"] %>, <%= visited["city"] %> </a></li>
+      <% end %>
+    </ul>
+
