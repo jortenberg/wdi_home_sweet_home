@@ -1,18 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans|Wire+One|Oswald:400,700,300);
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700);
+@import url(http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Lobster);
+
+/*font-family: 'Lobster', cursive;
+font-family: 'Dosis', sans-serif;
+font-family: 'Open Sans', sans-serif;*/
+
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #fff;
 }  
+
+p {
+	color: black;
+}
+
+h2 {
+
+}
 
 a {
   font-weight: bold;
- 	color: #0064D6
+ 	color: #284f8f
  }
 
 label {
 	color: black;
 }
+
 
 #login_panel {
   text-align: center;
@@ -24,6 +39,20 @@ label {
   margin-top: 20px;
 }
 
+#myHouses_panel {
+	text-align: left;
+	margin-top: 80px;
+	margin-bottom: 250px;
+}
+
+#myHouses_panel h2 {
+	font-family: 'Dosis', sans-serif;
+	color: #106490;
+	font-weight: 700;
+	padding-top: 0px;
+	text-align: center;
+}
+
 #newClient_panel {
 	text-align: center;
 	margin-top: 80px;
@@ -31,14 +60,18 @@ label {
 }
 
 #newClient_panel h2 {
+	font-family: 'Dosis', sans-serif;
+	color: #106490;
+	font-weight: 700;
 	padding-top: 0px;
-	color: black;
 }
 
 #newClient_panel h4 {
+	font-family: 'Dosis', sans-serif;
+	font-weight: 700;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	color: red;
+	color: #ea0667;
 }
 
 input {
@@ -47,23 +80,17 @@ input {
 }
 
 .panel-transparent {
-	/*border-radius: 20px;*/
-	/*border: none !important;*/
 	border-radius: 10px;
   background: none;
 }
 
-/*.panel-transparent .panel-heading{
-  background: rgba(211, 215, 219, 0.5)!important;
-}*/
 
 .panel-transparent .panel-body{
 	border-radius: 10px;
-/*  background: rgba(46, 51, 56, 0.8)!important;*/
 	background: rgba(225, 236, 249, 0.9)!important;
 }
 
-.cover{
+.cover {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -71,6 +98,24 @@ input {
 	color: rgb(255, 255, 255);
   background: url("/assets/img_0696.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
+
+.cover2 {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: rgb(255, 255, 255);
+  background: url("/assets/img_0700.jpg") no-repeat scroll 0px 100% / cover transparent;
+}
+
+.cover2 h5 {
+	font-family: 'Dosis', sans-serif;
+	font-weight: 700;
+	color: #ea0667;
+}
+
+
+
 
 /*.cover{
   color: rgb(255, 255, 255);

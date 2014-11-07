@@ -1,25 +1,53 @@
 
 <!-- showing all openhouses by user and creating them. -->
 
+<div class="cover2">
+  <div class="clearfix"></div>
   <div class="container">
-    <header class="row">
-      <div class="col-md-6">
-        <h2>Open Houses Scheduled By <%= user.fname %></h2>
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+        <div id="myHouses_panel" class="panel panel-primary panel-transparent">
+          <div class="panel-body">
+            <div>
+              <h2>My Open Houses</h2>
+            </div>
+
+            <table class="table">
+              <thead>   
+                <tr>
+                  <td><h5>ADDRESS</h5></td>
+                  <td><h5>DATE</h5></td>
+                  <td><h5>TIME</h5></td>
+                  <td><h5>DELETE</h5></td>
+                </tr>
+              </thead>
+              <tbody>
+                <% houses.each do |house| %>
+                  <tr>
+                    <td><a href="/houses/<%= house.id %>"><%= house.st_address %>, <%= house.city %> <%= house.state %></a></td>
+                    <td><p><%= house.sch_date %></p></td>
+                    <td><p><%= house.sch_time %></p></td>
+                    <td><input type="button"></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+
+            <form role="form" action="/houses/new" method="GET">
+              <div class="form-group" style="text-align: center">
+                <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+                <button type="submit" class="btn btn-primary">Schedule an Open House</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
       </div>
-    </header>
-
-
-    <ul>
-      <% houses.each do |house| %>
-        <li><a href="/houses/<%= house.id %>"><%= house.st_address %>, <%= house.city %> <%= house.state %> | <%= house.sch_date %> | <%= house.sch_time %></a></li>
-      <% end %>
-    </ul>
-
-    <form role="form" action="/houses/new" method="GET">
-      <div class="form-group">
-        <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-        <button type="submit" class="btn btn-primary">Schedule an Open House</button>
-      </div>
-    </form>
-
+    </div>
+            
   </div>
+
+</div>
+
+

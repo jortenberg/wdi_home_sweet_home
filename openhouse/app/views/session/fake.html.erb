@@ -1,76 +1,41 @@
-  <!-- beg navbar --> 
+
+
+
+
 <div class="cover">
   <div class="clearfix"></div>
+  <div class="container">
 
-  <!-- end navbar -->
-      <div class="container">
-
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <div id="newClient_panel" class="panel panel-primary panel-transparent">
-              <div class="panel-body">
-
-                <form role="form" action="/clients" method="POST">
-                  <div>
-                    <h2>Welcome to <%= house.st_address %></h2>
-                    <h4>PLEASE SIGN IN</h4>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="first_name">First Name</label>
-                    <input type="text" class="form-control" id="fname" name="fname">
-                  </div>
-                  <div class="form-group">
-                    <label for="last_name">Last Name</label>
-                    <input type="text" class="form-control" id="lname" name="lname">
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" name="email">
-                  </div>
-                  <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="text" class="form-control" id="phone" name="phone">
-                  </div>
-                  <div class="form-group">
-                    <label for="st_address">Street Address</label>
-                    <input type="text" class="form-control" id="st_address" name="st_address">
-                  </div>
-                  <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" id="city" name="city">
-                  </div>
-                  <div class="form-group">
-                    <label for="state">State</label>
-                    <input type="text" class="form-control" id="state" name="state">
-                  </div>
-                  <div class="form-group">
-                    <label for="zip">Zip Code</label>
-                    <input type="text" class="form-control" id="zip" name="zip">
-                  </div>
-                  <div class="form-group">
-                    <label for="are_you">Are you being represented by a real estate agent?</label>
-                    <input type="text" class="form-control" id="are_you" name="are_you">
-                  </div>
-                  <div class="form-group">
-                    <label for="house_id"></label>
-                    <input type="hidden" class="form-control" id="house_id" name="house_id" value=<%= house.id %>>
-                  </div>
-
-                    <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary" id="main_submit">Submit</button>
-                  </div>
-                   
-                </form>
-                
-
-              </div>
-            </div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+        <div id="myHouses_panel" class="panel panel-primary panel-transparent">
+          <div class="panel-body">
+            <table class="table">
+              <thead>   
+                <tr>
+                  <td><h6>ADDRESS</h6></td>
+                  <td><h6>DATE</h6></td>
+                  <td><h6>TIME</h6></td>
+                  <td><h6>DELETE</h6></td>
+                </tr>
+              </thead>
+              <tbody>
+                <% houses.each do |house| %>
+                  <tr>
+                    <td><a href="/houses/<%= house.id %>"><%= house.st_address %>, <%= house.city %> <%= house.state %></a></td>
+                    <td><%= house.sch_date %></td>
+                    <td><%= house.sch_time %></td>
+                    <td><input type="checkbox"></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
           </div>
         </div>
-                
       </div>
+    </div>
+            
+  </div>
 
 </div>
+
