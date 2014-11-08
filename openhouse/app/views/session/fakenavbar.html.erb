@@ -19,12 +19,7 @@
             <ul class = "dropdown-menu">
               <li><a href = "users/new">Sign Up</a></li>
               <li><a href = "/login">Log In</a></li>
-              <li><a href = "/session">Log Out</a></li>
-<!--               <form action="/session" method="POST" > 
-                <input name="_method" value="DELETE" type="hidden" />
-                <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-                <li>Log Out</li>
-              </form> -->
+              <li><a href = "/logout">Log Out</a></li>
             </ul>
           </li>
         </ul>
@@ -33,32 +28,18 @@
   </div>
   <!-- end navbar -->
 
+  <!-- beg navbar --> 
+  <div class="navbar-inverse navbar-static-top">
+    <div class="container">
+      <a href = "#" class = "navbar-brand">OPENHOUSER</a>
+      <div class = "collapse navbar-collapse navHeaderCollapse">
+        <ul class = "nav navbar-nav navbar-right">
 
-<!-- stuff -->
-<div class="cover">
-  <div class="clearfix"></div>
-   <nav>
-    <ul>
-        <li><a href="#portfolio">SHOP</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#contact">PRESS</a></li>
-    </ul>
+          <li><a href = "#">My Open Houses</a></li>
+          <li><a href = "#">My Attendees</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- end navbar -->
 
-  </nav>
-
-</div>
-
-
-.cover{
-    color: rgb(255, 255, 255);
-    position: relative;
-    min-height: 350px;
-    background: url("http://lewisking.net/images/header-image.jpg") no-repeat scroll 0px 100% / cover transparent;
-}
-
-nav ul li {
-  list-style:none;
-  float:left;
-  margin-right:50px;
-
-}

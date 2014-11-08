@@ -7,6 +7,13 @@ font-family: 'Dosis', sans-serif;
 font-family: 'Open Sans', sans-serif;*/
 
 
+
+.navbar-brand {
+	font-family: 'Dosis', sans-serif;
+	font-weight: 800;
+}
+
+
 body {
   font-family: 'Open Sans', sans-serif;
 }  
@@ -16,7 +23,7 @@ p {
 }
 
 h2 {
-
+	color: black;
 }
 
 a {
@@ -31,7 +38,15 @@ label {
 
 #login_panel {
   text-align: center;
-  margin-top: 20px;
+	margin-top: 150px;
+	margin-bottom: 300px;
+}
+
+#login_panel h1 {
+	font-family: 'Dosis', sans-serif;
+	font-weight: 700;
+	margin-bottom: 10px;
+	color: #ea0667;
 }
 
 #signup_panel {
@@ -56,7 +71,7 @@ label {
 
 #myHouses_panel {
 	text-align: left;
-	margin-top: 80px;
+	margin-top: 125px;
 	margin-bottom: 250px;
 }
 
@@ -109,7 +124,15 @@ input {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+	background-size: 100% 100%;
+	color: rgb(255, 255, 255);
+  background: url("/assets/img_0696.jpg") no-repeat scroll 0px 100% / cover transparent;
+}
+.cover1 {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: 100% 100%;
 	color: rgb(255, 255, 255);
   background: url("/assets/img_0696.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
