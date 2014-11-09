@@ -19,7 +19,7 @@
                   <td><h5>ADDRESS</h5></td>
                   <td><h5>DATE</h5></td>
                   <td><h5>TIME</h5></td>
-                  <td><h5>DELETE</h5></td>
+                  <td><h5>RE-SCHEDULE</h5></td>
                 </tr>
               </thead>
               <tbody>
@@ -28,7 +28,7 @@
                     <td><a href="/houses/<%= house.id %>"><%= house.st_address %>, <%= house.city %> <%= house.state %></a></td>
                     <td><p><%= house.sch_date %></p></td>
                     <td><p><%= house.sch_time %></p></td>
-                    <td><input type="button"></td>
+                    <td style="text-align: center"><a href="/houses/reschedule/<%= house.id %>"><button type="submit" class="btn btn-primary btn-xs">Revise</button></a></td>
                   </tr>
                 <% end %>
               </tbody>

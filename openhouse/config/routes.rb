@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   delete 'users/:id' => 'users#destroy'
 
   get 'houses/new' => 'houses#new'
+  get 'houses/reschedule/:id' => 'houses#reschedule'
   get 'houses' => 'houses#index'
   post 'houses' => 'houses#create'
   get 'houses/:id' => 'houses#show'
