@@ -1,0 +1,36 @@
+
+<!-- showing all openhouses by user and creating them. -->
+
+<div class="cover6">
+  <div class="clearfix"></div>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <div id="showClient_panel" class="panel panel-primary panel-transparent">
+          <div class="panel-body">
+            <div>
+              <h1><%= client.fname %> <%= client.lname %></h1>
+              <h4><%= client.email %></h4>
+              <h4><%= client.phone %></h4>
+              <p><%= client.st_address %></p>
+              <p><%= client.city %>, <%= client.state %> <%= client.zip %></p>
+              <% if client.are_you == false %>
+                <p><%= client.fname %> is not being represented by an agent.<br>Go for it!</p>
+              <% else %>
+                <p><%= client.fname %> is being represented by an agent.</p>
+              <% end %>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+            
+  </div>
+
+</div>
+
+
+
+

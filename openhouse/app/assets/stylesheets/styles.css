@@ -36,6 +36,7 @@ label {
 }
 
 
+
 #login_panel {
   text-align: center;
 	margin-top: 150px;
@@ -51,7 +52,15 @@ label {
 
 #signup_panel {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 150px;
+	margin-bottom: 300px;
+}
+
+#signup_panel h1 {
+	font-family: 'Dosis', sans-serif;
+	font-weight: 700;
+	margin-bottom: 10px;
+	color: #ea0667;
 }
 
 #newHouse_panel {
@@ -104,7 +113,43 @@ label {
 	color: #ea0667;
 }
 
-input {
+#myClients_panel {
+	text-align: center;
+	margin-top: 125px;
+	margin-bottom: 250px;
+}
+
+#myClients_panel h2 {
+	font-family: 'Dosis', sans-serif;
+	color: #106490;
+	font-weight: 700;
+	padding-top: 0px;
+	text-align: center;
+}
+
+#showClient_panel {
+	text-align: center;
+	margin-top: 200px;
+	margin-bottom: 300px;
+}
+
+#showClient_panel h1 {
+	font-family: 'Dosis', sans-serif;
+	color: #106490;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+#showClient_panel h3 {
+	font-family: 'Dosis', sans-serif;
+	color: #ea0667;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+/*input {
 	border: none !important;
 	background: rgba(253, 253, 253, 0.5)!important;
 }
@@ -118,7 +163,7 @@ input {
 .panel-transparent .panel-body{
 	border-radius: 10px;
 	background: rgba(225, 236, 249, 0.9)!important;
-}
+}*/
 
 .cover {
 	-webkit-background-size: cover;
@@ -155,6 +200,34 @@ input {
   background: url("/assets/img_0697.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
 
+.cover4 {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: rgb(255, 255, 255);
+  background: url("/assets/img_0700.jpg") no-repeat scroll 0px 100% / cover transparent;
+}
+
+.cover5 {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: rgb(255, 255, 255);
+  background: url("/assets/img_0697.jpg") no-repeat scroll 0px 100% / cover transparent;
+}
+
+.cover6 {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: rgb(255, 255, 255);
+  background: url("/assets/img_0700.jpg") no-repeat scroll 0px 100% / cover transparent;
+}
+
+
 .cover2 h5 {
 	font-family: 'Dosis', sans-serif;
 	font-weight: 700;
@@ -167,22 +240,20 @@ input {
 	color: #ea0667;
 }
 
+.cover5 h5 {
+	font-family: 'Dosis', sans-serif;
+	font-weight: 700;
+	color: #ea0667;
+}
 
-/*.cover{
-  color: rgb(255, 255, 255);
-  position: relative;
-  background: url("/assets/img_0696.jpg") no-repeat scroll 0px 100% / cover transparent;
-}*/
+.cover6 h4 {
+	font-family: 'Dosis', sans-serif;
+	font-weight: 700;
+	margin-bottom: 12px;
+	color: #ea0667;
+}
 
-/*nav ul li {
-  list-style:none;
-  float:left;
-  margin-right:50px;
-}*/
 
-/*.navbar-inner {
-  background-size:cover;
-}*/
 
 
 

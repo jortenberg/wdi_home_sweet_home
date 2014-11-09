@@ -5,7 +5,6 @@ class ClientsController < ApplicationController
 	end
 
 
-	#HTTParty.get('http://localhost:3000/houses.json')
 	def index
 		user = User.find_by(id: session[:user_id])
 		the_houses = user.houses
@@ -17,8 +16,13 @@ class ClientsController < ApplicationController
 
  
 	def create
+		if params["are_you"].downcase == "yes"
+			answer = true
+		else
+			answer = false
+		end
 
-		client = Client.new(fname: params["fname"], lname: params["lname"], email: params["email"], phone: params["phone"], st_address: params["st_address"], city: params["city"], state: params["state"], zip: params["zip"], are_you: params["are_you"], house_id: params["house_id"])
+		client = Client.new(fname: params["fname"], lname: params["lname"], email: params["email"], phone: params["phone"], st_address: params["st_address"], city: params["city"], state: params["state"], zip: params["zip"], are_you: answer, house_id: params["house_id"])
 
 		if client.valid? 
 			client.save
@@ -26,7 +30,13 @@ class ClientsController < ApplicationController
 		else
 			render :json => client.errors.messages
 		end
+	end
 
+
+	def show
+		client = Client.find(params[:id])
+		
+		render(:show, { locals: { client: client } })
 	end
 
 
