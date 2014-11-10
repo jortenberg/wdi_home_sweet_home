@@ -129,7 +129,7 @@ label {
 
 #showClient_panel {
 	text-align: center;
-	margin-top: 200px;
+	margin-top: 225px;
 	margin-bottom: 300px;
 }
 
@@ -171,7 +171,7 @@ label {
 	-o-background-size: cover;
 	background-size: 100% 100%;
 	color: rgb(255, 255, 255);
-  background: url("/assets/img_0696.jpg") no-repeat scroll 0px 100% / cover transparent;
+  background: url("/assets/img_05.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
 .cover1 {
 	-webkit-background-size: cover;
@@ -188,7 +188,7 @@ label {
 	-o-background-size: cover;
 	background-size: cover;
 	color: rgb(255, 255, 255);
-  background: url("/assets/img_0700.jpg") no-repeat scroll 0px 100% / cover transparent;
+  background: url("/assets/img_04.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
 
 .cover3 {
@@ -215,7 +215,7 @@ label {
 	-o-background-size: cover;
 	background-size: cover;
 	color: rgb(255, 255, 255);
-  background: url("/assets/img_0697.jpg") no-repeat scroll 0px 100% / cover transparent;
+  background: url("/assets/img_01.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
 
 .cover6 {
@@ -224,7 +224,7 @@ label {
 	-o-background-size: cover;
 	background-size: cover;
 	color: rgb(255, 255, 255);
-  background: url("/assets/img_0700.jpg") no-repeat scroll 0px 100% / cover transparent;
+  background: url("/assets/img_02.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
 
 
